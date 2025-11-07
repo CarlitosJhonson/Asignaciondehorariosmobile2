@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin - Asignación de Horarios</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* pequeñas adaptaciones para admin */
+    .row { display:flex; gap:8px; flex-wrap:wrap; }
+    .card { background:#fff;padding:12px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,0.06);margin-bottom:12px; }
+    .small { width:48%; }
+    @media(min-width:720px){ .small{ width:32%; } }
+    label{font-size:13px;color:#333}
+    .controls{display:flex;gap:8px;margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header><h1>Panel Funcionario</h1></header>
+    <main>
+      <section id="admin-login">
+        <h2>Iniciar sesión (funcionario)</h2>
+        <input id="a-correo" placeholder="Correo" />
+        <input id="a-password" placeholder="Contraseña" type="password" />
+        <button id="a-login">Ingresar</button>
+      </section>
+
+      <section id="admin-panel" class="hidden">
+        <div class="card">
+          <h3>Aprendices</h3>
+          <div class="row">
+            <input id="nuevo-nombre" placeholder="Nombre" class="small" />
+            <input id="nuevo-correo" placeholder="Correo" class="small" />
+            <input id="nuevo-pass" placeholder="Contraseña" class="small" />
+          </div>
+          <div class="controls">
+            <button id="crear-aprendiz">Crear aprendiz</button>
+            <button id="cargar-aprendices">Cargar aprendices</button>
+          </div>
+          <ul id="lista-aprendices"></ul>
+        </div>
+
+        <div class="card">
+          <h3>Horarios</h3>
+          <div class="row">
+            <input id="h-aprendiz-id" placeholder="ID Aprendiz" class="small" />
+            <input id="h-dia" placeholder="Día (Lunes)" class="small" />
+            <input id="h-inicio" placeholder="HH:MM:SS" class="small" />
+            <input id="h-fin" placeholder="HH:MM:SS" class="small" />
+            <input id="h-materia" placeholder="Materia" class="small" />
+          </div>
+          <div class="controls">
+            <button id="crear-horario">Crear horario</button>
+            <button id="cargar-horarios">Cargar horarios</button>
+          </div>
+          <ul id="lista-horarios-admin"></ul>
+        </div>
+
+        <button id="a-logout">Cerrar sesión</button>
+      </section>
+    </main>
+  </div>
+<script src="js/admin.js"></script>
+</body>
+</html>
